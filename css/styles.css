@@ -1,0 +1,494 @@
+/* ==========================================================
+   Design
+   Reusable colors, borders, spacing, and shadows for the whole site.
+   ========================================================== */
+:root {
+  --ink: #172033;
+  --muted: #5e687d;
+  --purple: #5b4bdb;
+  --teal: #18a999;
+  --line: #dfe3ee;
+  --paper: #f8f9fe;
+  --card: #fff;
+  --radius: 1.25rem;
+  --shadow: 0 18px 50px rgba(38, 44, 75, 0.13);
+}
+/* ==========================================================
+   Global Values and Base
+   Dynamic size, font, and interactable elements.
+   ========================================================== */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font:
+    16px/1.65 Inter,
+    system-ui,
+    sans-serif;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  width: min(1160px, calc(100% - 2rem));
+  margin: auto;
+}
+/* ==========================================================
+   Header and Navigation
+   Header stays visible.
+   ========================================================== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f8f9fef0;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 30px #1f27470d;
+}
+.navbar {
+  min-height: 4.7rem;
+}
+.brand {
+  color: var(--ink);
+  font-weight: 900;
+  font-size: 1.45rem;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+}
+.nav-link {
+  font-weight: 750;
+  color: var(--ink);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.8rem !important;
+}
+.nav-link:hover {
+  color: var(--purple);
+  background: #ebe9ff;
+}
+section {
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--purple);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+h1 {
+  font-size: clamp(3.2rem, 7.5vw, 6rem);
+  font-weight: 850;
+}
+h2 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+}
+/* ==========================================================
+   Hero
+   Desktop: Two columns.
+   Mobile: Profile photo appears after name.
+   ========================================================== */
+.hero {
+  min-height: calc(100vh - 4.7rem);
+  display: grid;
+  align-items: center;
+  background:
+    radial-gradient(circle at 88% 22%, #5b4bdb20, transparent 25%),
+    radial-gradient(circle at 10% 90%, #18a99915, transparent 24%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-areas: "eye photo" "title photo" "lead photo" "tags photo";
+  gap: 0 5rem;
+  align-items: center;
+}
+.hero .eyebrow {
+  grid-area: eye;
+}
+.hero h1 {
+  grid-area: title;
+  margin: 0.2rem 0 1rem;
+}
+.lead {
+  grid-area: lead;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+.profile {
+  grid-area: photo;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  position: relative;
+  transform: rotate(2deg);
+}
+.profile:before {
+  content: "";
+  position: absolute;
+  inset: 1rem -1rem -1rem 1rem;
+  border: 3px solid var(--teal);
+  border-radius: var(--radius);
+  z-index: -1;
+}
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.profile figcaption {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.7rem;
+  color: white;
+  background: #101827df;
+  font-size: clamp(0.65rem, 2.4vw, 0.85rem);
+  font-weight: 750;
+  white-space: nowrap;
+}
+.tags {
+  grid-area: tags;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  list-style: none;
+}
+.tags li {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffffd9;
+  font-weight: 750;
+  box-shadow: 0 6px 16px #2a325410;
+}
+/* ==========================================================
+   Grid Layout
+   Grids used for: About, Research, and Contact.
+   ========================================================== */
+.split,
+.research,
+.contact {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(2rem, 7vw, 7rem);
+}
+.large {
+  font-size: 1.25rem;
+}
+/* ==========================================================
+   Education
+   Academic cards with hover.
+   ========================================================== */
+.tint {
+  background: #eef2ff;
+}
+.heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.7rem;
+}
+.majors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.majors article {
+  padding: 1.5rem;
+  min-height: 230px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px #303b5a10;
+  transition: 0.25s;
+}
+.majors article:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+}
+.majors b {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: #efedff;
+  font-size: 2rem;
+}
+/* ==========================================================
+   Research
+   ========================================================== */
+.research {
+  align-items: center;
+}
+.research-art {
+  display: grid;
+  place-items: center;
+  min-height: 430px;
+  border-radius: 45% 55% 58% 42%;
+  background: linear-gradient(145deg, var(--purple), #17295a);
+  color: #fff;
+  font: 900 9rem Georgia;
+  box-shadow: var(--shadow);
+}
+.overview {
+  margin: 1.5rem 0;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: 0 1rem 1rem 0;
+  background: white;
+  box-shadow: 0 12px 30px #2a325414;
+}
+.overview small {
+  color: var(--purple);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.overview h3 {
+  font-size: 1.5rem;
+}
+.details {
+  color: var(--purple);
+  font-weight: 850;
+}
+/* ==========================================================
+   Creative Work
+   ========================================================== */
+.dark {
+  color: #f4f7ff;
+  background:
+    radial-gradient(circle at 95% 5%, #5b4bdb40, transparent 28%),
+    linear-gradient(145deg, #0d1628, #111d34);
+}
+.dark .eyebrow,
+.work small {
+  color: #8deadd;
+}
+.left {
+  text-align: left;
+  margin-left: 0;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+.filters button {
+  padding: 0.62rem 1rem;
+  border: 1px solid #42506a;
+  border-radius: 999px;
+  background: transparent;
+  color: #e8eefb;
+  font-weight: 750;
+}
+.filters button.active,
+.filters button:hover {
+  background: var(--teal);
+  color: #07120f;
+}
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+}
+.work {
+  overflow: hidden;
+  border: 1px solid #293650;
+  border-radius: var(--radius);
+  background: #111d32;
+  box-shadow: 0 16px 38px #0003;
+  transition: 0.25s;
+}
+.work:hover {
+  transform: translateY(-5px);
+}
+.work[hidden] {
+  display: none;
+}
+.work iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  background: #000;
+}
+.work > div:last-child {
+  padding: 1.25rem;
+}
+.work h3 {
+  margin: 0.3rem 0;
+}
+.art-work {
+  grid-column: 1/-1;
+}
+.art-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem !important;
+  background: #0b1527;
+}
+.art {
+  padding: 0;
+  border: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  aspect-ratio: 1;
+  cursor: zoom-in;
+}
+.art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ==========================================================
+   Contact Form and Social Media Links
+   ========================================================== */
+.contact {
+  align-items: start;
+}
+.contact form {
+  padding: 2rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: #fbfcff;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+form button {
+  padding: 0.75rem 1.2rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: var(--purple);
+  color: white;
+  font-weight: 850;
+}
+.social {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+.social img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.6rem;
+}
+/* ==========================================================
+   Footer and Artwork Modal
+   ========================================================== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 0;
+}
+footer {
+  background: white;
+  border-top: 1px solid var(--line);
+}
+.art-large {
+  display: grid;
+  place-items: center;
+}
+.art-large img {
+  max-height: 78vh;
+}
+
+/* ==========================================================
+   Portability
+   Tablet: Stack major layouts.
+   ========================================================== */
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 3.5rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "eye" "title" "photo" "lead" "tags";
+  }
+  .profile {
+    max-width: 430px;
+    margin: 1.2rem auto 2.2rem;
+  }
+  .hero .lead {
+    margin-top: 0;
+  }
+  .majors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .research,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+  .art-work {
+    grid-column: auto;
+  }
+}
+
+/* Phone: simplify every remaining multi-column layout. */
+@media (max-width: 650px) {
+  .split,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .majors {
+    grid-template-columns: 1fr;
+  }
+  .tags li {
+    font-size: 0.82rem;
+  }
+  .footer {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================
+   Research Page Modifications
+   ========================================================== */
+.research-page > h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+}

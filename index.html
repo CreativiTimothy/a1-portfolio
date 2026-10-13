@@ -1,24 +1,352 @@
 <!doctype html>
 <html lang="en">
-
-<!--
-WRITTEN BY: Your name here
-EMAIL: Your email here
+  <!--
+WRITTEN BY: Timothy Nguyen
+EMAIL: timotn14@uci.edu
 -->
 
-<head>
-  <meta charset="utf-8">
-  <meta name="author" content="Your name here">
-  <meta name="description" content="description of your page">
-   <!-- you would link to an external stylesheet here! -->
-   <!-- you would also link to Bootstrap here! -->
-  <title>title here</title>
-</head>
-<body>
-  <p>
-    <a href="http://validator.w3.org/check?uri=referer">
-       W3C validator
-    </a>
-  </p>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CreativiTimothy | Timothy Nguyen</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <!-- ======================================================
+       Site Header + Navigation Bar
+       Mobile: Navigation bar collapses (via Bootstrap)
+       if screen is too narrow.
+       ====================================================== -->
+    <header>
+      <nav class="container navbar navbar-expand-lg">
+        <a class="brand" href="#home">CreativiTimothy</a
+        ><button
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#about">About</a
+            ><a class="nav-link" href="#education">Education</a
+            ><a class="nav-link" href="#research">Research</a
+            ><a class="nav-link" href="#creative">Creative Work</a
+            ><a class="nav-link" href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- ======================================================
+         Section: Hero / Introduction
+         ====================================================== -->
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <p class="eyebrow">Hello, I am</p>
+          <h1>Timothy Nguyen</h1>
+          <figure class="profile">
+            <img
+              src="assets/images/photo-profile.jpg"
+              alt="Profile photo of Timothy Nguyen">
+            <figcaption>Student • Researcher • Creator</figcaption>
+          </figure>
+          <p class="lead">
+            A multidisciplinary student, researcher, and creator connecting
+            <strong>technology</strong>, <strong>human behavior</strong>, and
+            <strong>creative expression</strong>.
+          </p>
+          <ul class="tags">
+            <li>🖥️ Computer Science</li>
+            <li>🧠 Psychology</li>
+            <li>👥 Social Ecology</li>
+            <li>🔬 Psychological Science</li>
+            <li>🎨 Creative Works</li>
+          </ul>
+        </div>
+      </section>
+      <!-- ======================================================
+         Section: About
+         ====================================================== -->
+      <section id="about">
+        <div class="container split">
+          <div>
+            <p class="eyebrow">About me</p>
+            <h2>Creativity across disciplines</h2>
+          </div>
+          <div>
+            <p class="large">
+              I study how people, technology, and communities influence one
+              another. My academic path gives me both technical and
+              human-centered approaches to solving problems.
+            </p>
+            <p>
+              Outside the classroom, I express my creativity through music,
+              dance, visual art, and crafts.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ======================================================
+         Section: Education
+         Majors organize into individual cards.
+         ====================================================== -->
+      <section class="tint" id="education">
+        <div class="container">
+          <div class="heading">
+            <p class="eyebrow">Academic experience</p>
+            <h2>Four perspectives, one foundation</h2>
+          </div>
+          <div class="majors">
+            <article>
+              <span class="major-icon" aria-hidden="true">🖥️</span>
+              <h3>Computer Science</h3>
+              <p>
+                Programming, software, artificial intelligence, and algorithms.
+              </p>
+            </article>
+            <article>
+              <span class="major-icon" aria-hidden="true">🧠</span>
+              <h3>Psychology</h3>
+              <p>Human cognition and behavior—biological emphasis.</p>
+            </article>
+            <article>
+              <span class="major-icon" aria-hidden="true">👥</span>
+              <h3>Social Ecology</h3>
+              <p>Interaction between people, communities, and environments.</p>
+            </article>
+            <article>
+              <span class="major-icon" aria-hidden="true">🔬</span>
+              <h3>Psychological Science</h3>
+              <p>Human cognition and behavior—social emphasis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ======================================================
+         Section: Research
+         Display short overview of research project.
+         Links to full detail of research project: "research.html".
+         ====================================================== -->
+      <section id="research">
+        <div class="container research">
+          <div class="research-art">R</div>
+          <div class="research-content">
+            <p class="eyebrow">Independent research</p>
+            <h2>One question, investigated deeply</h2>
+            <div class="overview">
+              <small>Research question</small>
+              <h3>
+                How do demographics such as age, race, gender, and sexuality
+                correlate with perception of profile picture attractiveness?
+              </h3>
+              <p>
+                Can we uncover implicit prejudice through perception of profile
+                picture attractiveness? What groups are most marginalized?
+              </p>
+            </div>
+            <a class="details" href="research.html"
+              >View the complete research project →</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- ======================================================
+         Section: Creative Work
+         JavaScript filters these cards by category. YouTube videos are
+         embedded so a visitor can play them without leaving the page.
+         ====================================================== -->
+      <section class="dark" id="creative">
+        <div class="container">
+          <div class="heading left">
+            <p class="eyebrow">Selected creative work</p>
+            <h2>Music, dance, visual art, and crafts</h2>
+          </div>
+          <div class="filters">
+            <button class="active" data-filter="all">All</button
+            ><button data-filter="music">Music</button
+            ><button data-filter="dance">Dance</button
+            ><button data-filter="visual">Visual Art</button
+            ><button data-filter="crafts">Crafts</button>
+          </div>
+          <div class="portfolio">
+            <article class="work" data-category="music">
+              <iframe
+                src="https://www.youtube.com/embed/jevtDe8Ym2U"
+                title="Beatbox: OIIA Cat"
+                allowfullscreen
+              ></iframe>
+              <div>
+                <small>Music</small>
+                <h3>Beatbox: OIIA Cat</h3>
+              </div>
+            </article>
+            <article class="work" data-category="music">
+              <iframe
+                src="https://www.youtube.com/embed/RCaqe1f3y2M"
+                title="Piano: Mozart - Turkish March"
+                allowfullscreen
+              ></iframe>
+              <div>
+                <small>Music</small>
+                <h3>Piano: Mozart - Turkish March</h3>
+              </div>
+            </article>
+            <article class="work" data-category="dance">
+              <iframe
+                src="https://www.youtube.com/embed/AZI3fhIyjn4"
+                title="Dance: Zachz Winner - doodle"
+                allowfullscreen
+              ></iframe>
+              <div>
+                <small>Dance</small>
+                <h3>Dance: Zachz Winner - doodle</h3>
+              </div>
+            </article>
+            <article class="work" data-category="dance">
+              <iframe
+                src="https://www.youtube.com/embed/B9DHcGU15tE"
+                title="Dance: Domiwave4 - Phantom V1"
+                allowfullscreen
+              ></iframe>
+              <div>
+                <small>Dance</small>
+                <h3>Dance: Domiwave4 - Phantom V1</h3>
+              </div>
+            </article>
+            <article class="work art-work" data-category="visual">
+              <div class="art-grid">
+                <button
+                  class="art"
+                  data-src="assets/images/Drawing_Bird%20Black%20Pheobe_2014-05-12.jpg"
+                >
+                  <img
+                    src="assets/images/Drawing_Bird%20Black%20Pheobe_2014-05-12.jpg"
+                    alt="Drawing of Black Phoebe Bird"></button
+                ><button
+                  class="art"
+                  data-src="assets/images/Drawing_Aluminum%20Foil_2014-04-28_Crop.jpg"
+                >
+                  <img
+                    src="assets/images/Drawing_Aluminum%20Foil_2014-04-28_Crop.jpg"
+                    alt="Drawing of Aluminum Foil"></button
+                ><button
+                  class="art"
+                  data-src="assets/images/Drawing_Wonyoung_07-07-19.jpg"
+                >
+                  <img
+                    src="assets/images/Drawing_Wonyoung_07-07-19.jpg"
+                    alt="Drawing of Wonyoung"></button
+                ><button
+                  class="art"
+                  data-src="assets/images/Cardboard%20Craft_Person%20Drawing_2014-07-02.JPG"
+                >
+                  <img
+                    src="assets/images/Cardboard%20Craft_Person%20Drawing_2014-07-02.JPG"
+                    alt="Drawing of Cardboard Craft Person">
+                </button>
+              </div>
+              <div>
+                <small>Visual Art</small>
+                <h3>3 Drawings + 1 Cardstock Sculpture of a Person Drawing</h3>
+                <p>Click an image to enlarge it.</p>
+              </div>
+            </article>
+            <article class="work" data-category="crafts">
+              <iframe
+                src="https://www.youtube.com/embed/GIVAUFXl3OU"
+                title="Handmade Halloween Costume: Luigi's Mansion"
+                allowfullscreen
+              ></iframe>
+              <div>
+                <small>Crafts</small>
+                <h3>Handmade Halloween Costume: Luigi's Mansion</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ======================================================
+         Section: Contact
+         Opens email application prefilled with values from the
+         contact form.
+         Displays social media as icons as interactable icons.
+         ====================================================== -->
+      <section class="tint" id="contact">
+        <div class="container contact">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s connect</h2>
+            <p>Questions are welcome, and I am open to collaborate.</p>
+            <div class="social">
+              <a href="https://linkedin.com/in/CreativiTimothy"
+                ><img
+                  src="assets/images/Logo_Business_LinkedIn.png"
+                  alt="LinkedIn"></a
+              ><a href="https://github.com/CreativiTimothy"
+                ><img src="assets/images/Logo_GitHub.png" alt="GitHub"></a
+              ><a href="https://youtube.com/@CreativiTimothy"
+                ><img
+                  src="assets/images/Logo_Business_YouTube.png"
+                  alt="YouTube"></a>
+            </div>
+          </div>
+          <form id="form">
+            <div class="form-row">
+              <label>Name<input name="name" required></label
+              ><label>Email<input name="email" type="email" required></label>
+            </div>
+            <label>Subject<input name="subject" required></label
+            ><label
+              >Message<textarea
+                name="message"
+                rows="7"
+                required
+              ></textarea></label
+            ><button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- ======================================================
+       Footer
+       The copyright year is inserted automatically by script.js.
+       ====================================================== -->
+    <footer>
+      <div class="container footer">
+        <div>
+          <a class="brand" href="#home">CreativiTimothy</a>
+          <p>Designed and built by Timothy Nguyen.</p>
+        </div>
+        <p>© <span id="year"></span> Timothy Nguyen</p>
+      </div>
+    </footer>
+    <!-- ======================================================
+       Modal: Artwork (images)
+       Clicking an artwork thumbnail enlarges the view by
+       loading the image into Bootstrap modal viewer.
+       ====================================================== -->
+    <div class="modal fade" id="artModal">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="fs-4">Artwork</h2>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body art-large">
+            <img
+              id="largeArt"
+              src="assets/images/Drawing_Bird%20Black%20Pheobe_2014-05-12.jpg"
+              alt="Selected artwork enlarged">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
